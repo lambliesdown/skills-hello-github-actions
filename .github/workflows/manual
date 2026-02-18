@@ -1,0 +1,15 @@
+name: Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Dein Name'
+        required: true
+        default: 'Welt'
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hallo, ${{ github.event.inputs.name }}!"
